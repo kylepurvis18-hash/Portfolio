@@ -1,7 +1,6 @@
 # Firewall Build Plan (Phase 2)
 
-Status: planned, not yet executed. This is the step-by-step for turning the spare Windows 10 desktop into the OPNsense firewall. Assumes ADR-0002 (Accepted) and ADR-0003 (Proposed — OPNsense).
-
+Status: planned, not yet executed. This is the step-by-step for turning the spare Windows 10 desktop into the OPNsense firewall. Builds on ADR-0002 (Accepted) and ADR-0003 (Accepted — OPNsense).
 ## Hardware check
 
 OPNsense's own minimum spec is a 1 GHz dual-core CPU, 3 GB RAM, and 4 GB of storage; recommended is 1.5 GHz multi-core, 8 GB RAM, and a 120 GB SSD ([OPNsense hardware sizing docs](https://docs.opnsense.org/manual/hardware.html)). Any Windows 10–capable desktop from the last several years clears this easily — the only real gap is NICs.
