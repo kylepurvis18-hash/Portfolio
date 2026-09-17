@@ -37,5 +37,5 @@ The Xfinity XB8-T currently does routing, NAT, DHCP, and Wi-Fi for the whole hou
 
 ## Open items before starting
 
-- Confirm ADR-0003 (OPNsense vs. pfSense) — this plan assumes OPNsense.
 - Order the PCIe NIC.
+- Run the backup checklist (step 1 above).
