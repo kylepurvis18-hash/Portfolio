@@ -1,0 +1,12 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# Secrets — never commit real credentials, keys, or exported configs with secrets baked in
+*.env
+secrets/
+*.key
+*.pem
