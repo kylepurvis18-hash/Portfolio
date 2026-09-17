@@ -1,6 +1,6 @@
 # ADR-0002: Firewall/router runs on dedicated hardware, not virtualized on the lab host
 
-**Status:** Proposed — pending confirmation
+**Status:** Accepted
 **Date:** 2026-09-17
 
 ## Context
@@ -21,18 +21,22 @@ Current host: single physical machine, VMware Workstation/Player, one Ubuntu+Doc
    - Pro: avoids the virtual-switch VLAN-tag fragility entirely — the physical NIC(s) on a dedicated box see real 802.1Q trunk traffic with no hypervisor layer in between.
    - Con: costs money and adds a physical device to manage/document.
 
-## Decision (proposed)
+## Decision
 
-Run the firewall (pfSense or OPNsense — tool choice gets its own ADR) on dedicated hardware, separate from the VMware Workstation host.
+Run the firewall (pfSense or OPNsense — tool choice covered in ADR-0003) on dedicated hardware, separate from the VMware Workstation host. Hardware: a spare PC currently running Windows 10, wiped and repurposed to run the firewall OS **bare-metal** (not Windows-hosted, not virtualized) — see "Why bare-metal on this box" below.
 
 ## Why
 
 The core reasoning is the separation of concerns: the whole point of this rebuild is to be able to break, rebuild, and experiment on the lab freely. If the firewall lives on the same box as the thing being experimented on, every experiment risks taking down the network for the rest of the house — which either makes you cautious about touching the lab (defeating the purpose) or annoying to live with (defeating domestic peace). Dedicated hardware for core network infrastructure is also the standard pattern in real environments, so it's the more representative thing to document and speak to.
 
-This is marked **Proposed** rather than **Accepted** because it has a real cost implication that's your call, not mine — confirm or override and I'll flip the status.
+A spare Windows 10 PC is available and solves the cost problem entirely — no purchase needed for the base machine (only possibly a second NIC; see `docs/network/02-firewall-build.md`).
+
+### Why bare-metal, not "install the firewall OS in a VM on that Windows box"
+
+Windows 10 passed end-of-support in October 2025, so leaving it installed and internet-facing is itself a liability — this is a good reason to wipe it outright, not just a convenient excuse. Running the firewall OS as a VM under Windows on this box would also just recreate the exact problem this ADR exists to avoid (a general-purpose OS's updates/reboots/quirks sitting between the network and its own routing), one layer down. Wiping it and installing the firewall OS directly on the hardware removes that layer entirely: fewer moving parts, a smaller attack surface (no Windows to patch or misconfigure), and the box's only job becomes "be the firewall."
 
 ## Consequences
 
-- Requires sourcing a small second machine (old PC, mini-PC, or similar) with at least one, ideally two, NICs.
-- Slightly more to document (one more device in the topology) but a cleaner, more standard architecture.
-- If budget or availability becomes a blocker, the fallback is Option 1 (virtualized on the VMware host) with the promiscuous-mode/dedicated-NIC caveats documented as an accepted trade-off — this ADR would then be superseded.
+- The Windows 10 install and any data on that box's drive is gone after this — confirm nothing on it needs backing up first.
+- Needs at least one NIC dedicated to WAN and one to the LAN-side VLAN trunk; most single-NIC desktops need a second NIC added (USB3 Ethernet adapter or a PCIe card if there's a slot free). Finalized in `docs/network/02-firewall-build.md` once the box's specs are confirmed.
+- One more physical device in the topology to document and maintain (BIOS/firmware updates, physical placement, power draw) — accepted as the cost of the separation-of-concerns argument above.

@@ -38,8 +38,8 @@ Full network diagrams (current + target state), a narrative README pass, and a p
 | Phase | Status |
 |---|---|
 | 0 — Repo & baseline docs | Done |
-| 1 — Network reality check & VLAN design | In progress — see ADR-0002 (proposed) and `network/01-vlan-planning.md` |
-| 2 — Router/firewall | Not started |
+| 1 — Network reality check & VLAN design | Nearly done — bridge mode confirmed, ADR-0002 accepted; remaining: confirm ADR-0003, finalize VLAN table |
+| 2 — Router/firewall | Starting — see `network/02-firewall-build.md` (pending spare-PC specs) |
 | 3 — VLAN config | Not started |
 | 4 — Log collection | Not started |
 | 5 — Alerting rules | Not started |

@@ -4,6 +4,11 @@ All notable changes to the lab itself (not the docs) are logged here, oldest sec
 
 ## [Unreleased]
 
+### Decided
+- ADR-0002 **Accepted**: firewall runs bare-metal on a repurposed spare Windows 10 PC (wiped), not virtualized on the lab host.
+- ADR-0003 **Proposed**: OPNsense as the firewall OS over pfSense CE.
+- Xfinity XB8-T confirmed to support bridge mode — firewall will be the sole router (no double-NAT).
+
 ### Added
 - Repo scaffolding: README, roadmap, ADR process, changelog.
 - Baseline documentation of current environment (single-host hypervisor, Ubuntu+Docker VM, flat network behind Xfinity XB8-T / TP-Link TL-SG108E / TP-Link Deco 6E).
