@@ -16,6 +16,7 @@ All notable changes to the lab itself (not the docs) are logged here, oldest sec
 ### Added
 - Draft VLAN scheme and network-capability assessment (`docs/network/01-vlan-planning.md`).
 - ADR-0002 (proposed): firewall runs on dedicated hardware, not virtualized on the lab host.
+- Firewall build plan (`docs/network/02-firewall-build.md`): parts list, install steps, and cutover sequencing for the spare-PC OPNsense build.
 
 ### Decided
 - Documentation approach: Architecture Decision Records (ADRs) for anything that changes the design, plain changelog entries for routine changes. See [ADR-0001](docs/adr/0001-record-architecture-decisions.md).
