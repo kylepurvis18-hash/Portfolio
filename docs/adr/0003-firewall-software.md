@@ -1,6 +1,6 @@
 # ADR-0003: Use OPNsense as the firewall OS
 
-**Status:** Proposed — pending confirmation
+**Status:** Accepted
 **Date:** 2026-09-17
 
 ## Context
@@ -12,7 +12,7 @@ ADR-0002 decided the firewall runs bare-metal on dedicated hardware. The two mai
 1. **pfSense CE (Community Edition)** — the older, more widely-referenced-in-tutorials option. Netgate (the company behind it) has been steadily steering features and attention toward its paid "Plus" version and its own hardware appliances over the last few years; CE still exists and works, but its long-term feature parity and release cadence are less certain than they used to be.
 2. **OPNsense** — a fork of pfSense's predecessor (m0n0wall) with a more actively developed open-source model, a more modern web UI, and a business model (paid support contracts, not a gated "Plus" tier) that doesn't create the same pressure to hold features back from the free version.
 
-## Decision (proposed)
+## Decision
 
 Use OPNsense.
 
