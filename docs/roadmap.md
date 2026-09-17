@@ -37,8 +37,8 @@ Full network diagrams (current + target state), a narrative README pass, and a p
 
 | Phase | Status |
 |---|---|
-| 0 — Repo & baseline docs | In progress |
-| 1 — Network reality check & VLAN design | Not started |
+| 0 — Repo & baseline docs | Done |
+| 1 — Network reality check & VLAN design | In progress — see ADR-0002 (proposed) and `network/01-vlan-planning.md` |
 | 2 — Router/firewall | Not started |
 | 3 — VLAN config | Not started |
 | 4 — Log collection | Not started |
