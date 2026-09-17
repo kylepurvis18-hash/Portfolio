@@ -6,7 +6,7 @@ All notable changes to the lab itself (not the docs) are logged here, oldest sec
 
 ### Decided
 - ADR-0002 **Accepted**: firewall runs bare-metal on a repurposed spare Windows 10 PC (wiped), not virtualized on the lab host.
-- ADR-0003 **Proposed**: OPNsense as the firewall OS over pfSense CE.
+- ADR-0003 **Accepted**: OPNsense as the firewall OS over pfSense CE.
 - Xfinity XB8-T confirmed to support bridge mode — firewall will be the sole router (no double-NAT).
 
 ### Added
