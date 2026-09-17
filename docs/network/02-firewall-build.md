@@ -18,7 +18,12 @@ The Xfinity XB8-T currently does routing, NAT, DHCP, and Wi-Fi for the whole hou
 
 ## Steps
 
-1. **Back up anything on the Windows 10 box you want to keep.** The install wipes the drive.
+1. **Back up anything on the Windows 10 box you want to keep.** The install wipes the drive. Box is mostly unused, so a quick manual copy is enough — no need for full disk-imaging software:
+   - Plug in an external USB drive.
+   - In File Explorer, go to `C:\Users\<your username>\` and copy whatever has content across Desktop, Documents, Downloads, Pictures — drag them into a folder on the USB drive (e.g. `spare-pc-backup`).
+   - If the browser on this machine has saved passwords/bookmarks that only live locally (not synced to a Microsoft/Google/Firefox account), export them before wiping: browser Settings → Passwords/Bookmarks → Export. Treat the exported passwords file as sensitive — move it off the USB drive and delete it once imported elsewhere, don't leave it sitting around in plaintext.
+   - Skim the Desktop for loose files that aren't in the folders above.
+   - Once copied, verify the files actually opened/copied correctly from the USB drive before wiping — don't trust the copy dialog alone.
 2. **Install the second NIC** in the free PCIe slot.
 3. **Download the OPNsense installer image** from the official [Get Started / download page](https://opnsense.org/get-started/) and write it to a USB drive (Rufus on Windows, or balenaEtcher).
 4. **Boot the spare PC from the USB drive** and run through the OPNsense installer — this wipes Windows and installs OPNsense directly on the hardware (bare-metal, per ADR-0002).
