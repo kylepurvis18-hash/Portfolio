@@ -37,5 +37,5 @@ The Xfinity XB8-T currently does routing, NAT, DHCP, and Wi-Fi for the whole hou
 
 ## Open items before starting
 
-- Order the PCIe NIC.
+- ~~Order the PCIe NIC.~~ Ordered (ST729, Intel I210AT).
 - Run the backup checklist (step 1 above).
